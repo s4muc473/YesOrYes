@@ -32,6 +32,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
+            /* Adicionando position relative */
         }
 
         .main-board article {
@@ -67,6 +69,12 @@
         .button:active {
             transform: translate(0, 0);
             border-bottom: 2px solid rgb(50, 50, 50);
+        }
+
+        /* Adicionando position absolute ao botão Não */
+        #btNegativo {
+            position: absolute;
+            /* Agora o botão pode ser posicionado de forma livre */
         }
 
         /* Media Queries para responsividade */
@@ -125,8 +133,8 @@
             titulo.innerHTML = geradorFrasesAletorias();
 
             let botao = document.getElementById('btNegativo');
-            botao.style.left = posX + "px";
-            botao.style.top = posY + "px";
+            botao.style.left = posX + "px";  // Ajusta a posição X do botão
+            botao.style.top = posY + "px";   // Ajusta a posição Y do botão
         }
 
         const btPositivo = () => {
