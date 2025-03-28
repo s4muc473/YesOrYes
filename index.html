@@ -50,7 +50,7 @@
 
         .button,
         .button:focus {
-            width: 40%;
+            width: 20%;
             font-family: monospace;
             font-size: 1.2em;
             padding: 10px 25px;
@@ -64,6 +64,7 @@
             cursor: pointer;
             transition: 0.2s;
             transition-timing-function: linear;
+            position: relative;
         }
 
         .button:active {
@@ -71,10 +72,9 @@
             border-bottom: 2px solid rgb(50, 50, 50);
         }
 
-        /* Adicionando position absolute ao botão Não */
         #btNegativo {
-            position: absolute;
-            /* Agora o botão pode ser posicionado de forma livre */
+            /* position: absolute; */
+            width: 20%;
         }
 
         /* Media Queries para responsividade */
@@ -89,7 +89,7 @@
             }
 
             .button {
-                width: 80%;
+                width: 20%;
                 font-size: 1.1em;
                 padding: 8px 20px;
             }
@@ -106,7 +106,7 @@
             }
 
             .button {
-                width: 90%;
+                width: 22%;
                 font-size: 1em;
                 padding: 6px 15px;
             }
@@ -118,15 +118,15 @@
     <section class="main-board">
         <article>
             <p> Quer Casar comigo? &#128018;</p>
-            <button class="button" onclick="btPositivo()">Sim</button>
+            <button class="button" id="btPositivo" onclick="btPositivo()">Sim</button>
             <button class="button" id="btNegativo" onclick="posAleatoriaBotao()">Não</button>
         </article>
     </section>
 
     <script>
         const posAleatoriaBotao = () => {
-            let posX = Math.floor(Math.random() * 400 - 400);
-            let posY = Math.floor(Math.random() * 350 - 175);
+            let posX = Math.floor(Math.random() * 200 - 200);
+            let posY = Math.floor(Math.random() * 150 - 75);
             console.log(posY);
 
             const titulo = document.querySelector('p');
