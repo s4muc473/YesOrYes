@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YesorYes</title>
+</head>
+<style>
+    body {
+        background-color: #EF9CDA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .main-board {
+        background-color: #ffffff;
+        width: 75%;
+        height: 350px;
+        margin: auto;
+        border-radius: 20px;
+        box-shadow: 5px 3px #B91372;
+        padding-top: 120px;
+    }
+
+    .main-board article {
+        width: 75%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .main-board article p {
+        font-size: 1.5em;
+        color: #B91372;
+    }
+
+    .button,
+    .button:focus {
+        width: 20%;
+        position: relative;
+        font-family: monospace;
+        font-size: 17px;
+        padding: 10px 25px;
+        color: #ffffff;
+        border-radius: 0.7rem;
+        background-image: linear-gradient(#EF9CDA, #B91372);
+        border: 2px solid rgb(50, 50, 50);
+        border-bottom: 5px solid rgb(50, 50, 50);
+        box-shadow: 0px 1px 6px 0px #EF9CDA;
+        transform: translate(0, -3px);
+        cursor: pointer;
+        transition: 0.2s;
+        transition-timing-function: linear;
+    }
+
+    .button:active {
+        transform: translate(0, 0);
+        border-bottom: 2px solid rgb(50, 50, 50);
+    }
+</style>
+
+<body>
+    <section class="main-board">
+        <article>
+            <p> Quer Casar comigo? &#128018</p>
+            <button class="button" onclick="btPositivo()">Sim</button>
+            <button class="button" id="btNegativo" onclick="posAleatoriaBotao()">Não</button>
+        </article>
+    </section>
+
+    <script>
+        const posAleatoriaBotao = () => {
+            let posX = Math.floor(Math.random() * 400 - 400);
+            let posY = Math.floor(Math.random() * 350 - 175);
+            console.log(posY);
+
+            const titulo = document.querySelector('p');
+            titulo.innerHTML = geradorFrasesAletorias();
+
+            let botao = document.getElementById('btNegativo');
+            botao.style.left = posX + "px";
+            botao.style.top = posY + "px";
+        }
+
+        const btPositivo = () => {
+            const titulo = document.querySelector('p');
+            titulo.innerHTML = "Ai... vamu casar nenem, euuu ti amuu &#128536;";
+        }
+
+        const geradorFrasesAletorias = () => {
+            const arrayFrases = [
+                "Você não é Google, mas tem tudo o que eu procuro.",
+                "Se beleza desse cadeia, você pegaria prisão perpétua.",
+                "Eu não sou fotógrafo, mas eu posso nos ver juntos.",
+                "Se você fosse um triângulo, você seria um triângulo equilátero. Você é perfeita.",
+                "Se você fosse uma estrela, seria a estrela mais brilhante do meu céu.",
+                "Você é como um dicionário, adiciona significado à minha vida.",
+                "Acredita em amor à primeira vista, ou devo passar por aqui de novo?",
+                "Eu não sou um fotógrafo, mas posso nos imaginar juntos.",
+                "Se beleza fosse tempo, você seria a eternidade.",
+                "Você não é o sol, mas você ilumina o meu dia.",
+                "Seu pai é um ladrão? Porque ele roubou as estrelas e as colocou nos seus olhos.",
+                "Se você fosse uma fruta, você seria uma uva. Porque você é uva-linda!",
+                "Você acredita em amor à primeira vista, ou devo passar por aqui novamente?",
+                "Eu não sou um gênio, mas posso realizar seus três desejos.",
+                "Se eu fosse uma abelha, ficaria hipnotizado pelo seu mel.",
+                "Se você fosse uma lágrima, eu não choraria para não te perder.",
+                "Se a beleza fosse crime, você pegaria prisão perpétua.",
+                "Você não é um raio, mas ilumina o meu dia.",
+                "Você é o que acontece quando eu fecho meus olhos e penso em felicidade.",
+                "Se você fosse uma música, eu apertaria o repeat.",
+                "Você não é o Google, mas tem tudo o que eu procuro.",
+                "Se a saudade matasse, eu estaria morto agora pensando em você.",
+                "Seu pai é pirata? Porque ele deve ter roubado o brilho das estrelas para colocar nos seus olhos.",
+                "Eu não sou um ladrão, mas quero roubar seu coração.",
+                "Você é como um sonho bom que eu não quero acordar.",
+                "Se você fosse uma rosa, eu seria um jardim só para te cultivar.",
+                "Se eu pudesse reescrever o alfabeto, colocaria U e I juntos.",
+                "Você não é um farol, mas guia meu caminho.",
+                "Eu não sou um fotógrafo, mas posso fazer nós dois juntos.",
+                "Você não é um mapa, mas me faz querer explorar cada canto do seu corpo.",
+                "Se você fosse uma estrela cadente, eu pediria um desejo a cada vez que te visse.",
+                "Você é como um diamante, raro e precioso.",
+                "Se eu fosse um pássaro, voaria até você a cada amanhecer.",
+                "Seu sorriso ilumina até mesmo os dias mais nublados.",
+                "Eu não sou um astronauta, mas adoraria explorar o seu universo.",
+                "Seu amor é como um ímã, me atrai cada vez mais.",
+                "Você não é a Lua, mas ilumina as minhas noites.",
+                "Se o amor fosse uma piada, você seria a mais engraçada.",
+                "Você é a resposta para todas as minhas preces.",
+                "Eu não sou um gato, mas tenho curiosidade sobre você.",
+                "Se eu fosse um jardim, você seria a flor mais bonita.",
+                "Se você fosse um oceano, eu me perderia em suas profundezas.",
+                "Se beleza fosse tempo, você seria a eternidade.",
+                "Você não é uma rosa, mas ainda assim faz meu coração florescer.",
+                "Se eu fosse um super-herói, você seria minha kriptonita.",
+                "Você é a razão pela qual eu acredito em contos de fadas.",
+                "Seus olhos são como estrelas que guiam meu caminho na escuridão.",
+                "Se eu pudesse escolher, te escolheria todos os dias.",
+                "Eu não sou um expert em poções, mas nós dois juntos seria uma combinação mágica.",
+                "Se a felicidade fosse um segundo, passaria o resto da vida ao seu lado."
+            ];
+
+            let fraseAleatoria = Math.floor(Math.random() * arrayFrases.length);
+        
+            return arrayFrases[fraseAleatoria];
+        }
+    </script>
+</body>
+
+</html>
