@@ -5,67 +5,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YesorYes</title>
+    <style>
+        body {
+            background-color: #EF9CDA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-board {
+            background-color: #ffffff;
+            width: 80%;
+            height: auto;
+            max-width: 600px;
+            min-height: 350px;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 5px 3px #B91372;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-board article {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .main-board article p {
+            font-size: 1.5em;
+            color: #B91372;
+            margin-bottom: 20px;
+        }
+
+        .button,
+        .button:focus {
+            width: 40%;
+            font-family: monospace;
+            font-size: 1.2em;
+            padding: 10px 25px;
+            color: #ffffff;
+            border-radius: 0.7rem;
+            background-image: linear-gradient(#EF9CDA, #B91372);
+            border: 2px solid rgb(50, 50, 50);
+            border-bottom: 5px solid rgb(50, 50, 50);
+            box-shadow: 0px 1px 6px 0px #EF9CDA;
+            transform: translate(0, -3px);
+            cursor: pointer;
+            transition: 0.2s;
+            transition-timing-function: linear;
+        }
+
+        .button:active {
+            transform: translate(0, 0);
+            border-bottom: 2px solid rgb(50, 50, 50);
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            .main-board {
+                width: 90%;
+                max-width: 500px;
+            }
+
+            .main-board article p {
+                font-size: 1.2em;
+            }
+
+            .button {
+                width: 80%;
+                font-size: 1.1em;
+                padding: 8px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-board {
+                width: 95%;
+                max-width: 400px;
+            }
+
+            .main-board article p {
+                font-size: 1em;
+            }
+
+            .button {
+                width: 90%;
+                font-size: 1em;
+                padding: 6px 15px;
+            }
+        }
+    </style>
 </head>
-<style>
-    body {
-        background-color: #EF9CDA;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .main-board {
-        background-color: #ffffff;
-        width: 75%;
-        height: 350px;
-        margin: auto;
-        border-radius: 20px;
-        box-shadow: 5px 3px #B91372;
-        padding-top: 120px;
-    }
-
-    .main-board article {
-        width: 75%;
-        margin: auto;
-        text-align: center;
-    }
-
-    .main-board article p {
-        font-size: 1.5em;
-        color: #B91372;
-    }
-
-    .button,
-    .button:focus {
-        width: 20%;
-        position: relative;
-        font-family: monospace;
-        font-size: 17px;
-        padding: 10px 25px;
-        color: #ffffff;
-        border-radius: 0.7rem;
-        background-image: linear-gradient(#EF9CDA, #B91372);
-        border: 2px solid rgb(50, 50, 50);
-        border-bottom: 5px solid rgb(50, 50, 50);
-        box-shadow: 0px 1px 6px 0px #EF9CDA;
-        transform: translate(0, -3px);
-        cursor: pointer;
-        transition: 0.2s;
-        transition-timing-function: linear;
-    }
-
-    .button:active {
-        transform: translate(0, 0);
-        border-bottom: 2px solid rgb(50, 50, 50);
-    }
-</style>
 
 <body>
     <section class="main-board">
         <article>
-            <p> Quer Casar comigo? &#128018</p>
+            <p> Quer Casar comigo? &#128018;</p>
             <button class="button" onclick="btPositivo()">Sim</button>
             <button class="button" id="btNegativo" onclick="posAleatoriaBotao()">Não</button>
         </article>
@@ -145,7 +189,7 @@
             ];
 
             let fraseAleatoria = Math.floor(Math.random() * arrayFrases.length);
-        
+
             return arrayFrases[fraseAleatoria];
         }
     </script>
